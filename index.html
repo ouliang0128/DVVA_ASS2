@@ -1,0 +1,4835 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script>L_PREFER_CANVAS=false; L_NO_TOUCH=false; L_DISABLE_3D=false;</script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.4.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+    <meta name="viewport" content="width=device-width,
+        initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <style>#map_a2560e2900d24e5483474da2d8b55ad6 {
+        position: relative;
+        width: 100.0%;
+        height: 100.0%;
+        left: 0.0%;
+        top: 0.0%;
+        }
+    </style>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/marslan390/BeautifyMarker/master/leaflet-beautify-marker-icon.css"/>
+    <script src="https://rawcdn.githack.com/marslan390/BeautifyMarker/master/leaflet-beautify-marker-icon.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.css"/>
+    <style>
+        #export {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            z-index: 999;
+            background: white;
+            color: black;
+            padding: 6px;
+            border-radius: 4px;
+            font-family: 'Helvetica Neue';
+            cursor: pointer;
+            font-size: 12px;
+            text-decoration: none;
+            top: 90px;
+        }
+        </style>
+    <script src="https://rawcdn.githack.com/makinacorpus/Leaflet.TextPath/leaflet0.8-dev/leaflet.textpath.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-ant-path@1.1.2/dist/leaflet-ant-path.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+</head>
+<body>    
+    
+    <div class="folium-map" id="map_a2560e2900d24e5483474da2d8b55ad6" ></div>
+    <a href='#' id='export'>Export</a>
+</body>
+<script>    
+    
+    
+        var bounds = null;
+    
+
+    var map_a2560e2900d24e5483474da2d8b55ad6 = L.map(
+        'map_a2560e2900d24e5483474da2d8b55ad6', {
+        center: [-25.27, 133.77],
+        zoom: 4,
+        maxBounds: bounds,
+        layers: [],
+        worldCopyJump: false,
+        crs: L.CRS.EPSG3857,
+        zoomControl: true,
+        });
+
+
+    
+    var tile_layer_997e0945f07340cb99264f97936ae1bc = L.tileLayer(
+        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        {
+        "attribution": null,
+        "detectRetina": false,
+        "maxNativeZoom": 18,
+        "maxZoom": 18,
+        "minZoom": 0,
+        "noWrap": false,
+        "opacity": 1,
+        "subdomains": "abc",
+        "tms": false
+}).addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+    
+        var marker_19645282d5504acaa258fbfe4f4ada65 = L.marker(
+            [-33.8688, 151.2093],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+        
+    
+            var popup_a0ac04c590c84ea7ba4f9f8bf7a0ac3a = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_5a053fa1b11047be9c8df7dc584355c4 = $(`<div id="html_5a053fa1b11047be9c8df7dc584355c4" style="width: 100.0%; height: 100.0%;">To Melbourne: 180$. <br><br> To Brisbane: 170$. <br><br> To Canberra: 120$. <br><br> To Newcastle: 90$. <br><br> To BrokenHill: 130$. <br><br> </div>`)[0];
+                popup_a0ac04c590c84ea7ba4f9f8bf7a0ac3a.setContent(html_5a053fa1b11047be9c8df7dc584355c4);
+            
+
+            marker_19645282d5504acaa258fbfe4f4ada65.bindPopup(popup_a0ac04c590c84ea7ba4f9f8bf7a0ac3a)
+            ;
+
+            
+        
+    
+        marker_19645282d5504acaa258fbfe4f4ada65.bindTooltip(
+            `<div>`
+            + `From City: Sydney` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                var beautify_icon_222043f6389b48918e8adc5dac4eb539 = new L.BeautifyIcon.icon({
+  "backgroundColor": "#FFF",
+  "borderColor": "#7133b3",
+  "borderWidth": 3,
+  "icon": "plane",
+  "iconShape": "marker",
+  "innerIconStyle": "",
+  "isAlphaNumericIcon": false,
+  "spin": true,
+  "textColor": "#b3334f"
+})
+                marker_19645282d5504acaa258fbfe4f4ada65.setIcon(beautify_icon_222043f6389b48918e8adc5dac4eb539);
+            
+    
+        var marker_7a9aec367228487bad0f19c13ea6b4cf = L.marker(
+            [-35.2809, 149.13],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+        
+    
+            var popup_2953ae687abd4845809de5fe6aa84638 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_d109767822484343b6f42fd1309ea7f8 = $(`<div id="html_d109767822484343b6f42fd1309ea7f8" style="width: 100.0%; height: 100.0%;">To Sydney: 120$. <br><br> To Melbourne: 140$. <br><br> </div>`)[0];
+                popup_2953ae687abd4845809de5fe6aa84638.setContent(html_d109767822484343b6f42fd1309ea7f8);
+            
+
+            marker_7a9aec367228487bad0f19c13ea6b4cf.bindPopup(popup_2953ae687abd4845809de5fe6aa84638)
+            ;
+
+            
+        
+    
+        marker_7a9aec367228487bad0f19c13ea6b4cf.bindTooltip(
+            `<div>`
+            + `From City: Canberra` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                var beautify_icon_4710e4b2243640f1bef1abf295bf4e5f = new L.BeautifyIcon.icon({
+  "backgroundColor": "#FFF",
+  "borderColor": "#7133b3",
+  "borderWidth": 3,
+  "icon": "plane",
+  "iconShape": "marker",
+  "innerIconStyle": "",
+  "isAlphaNumericIcon": false,
+  "spin": true,
+  "textColor": "#b3334f"
+})
+                marker_7a9aec367228487bad0f19c13ea6b4cf.setIcon(beautify_icon_4710e4b2243640f1bef1abf295bf4e5f);
+            
+    
+        var marker_acab386203ad4bf1a911885820c6d35b = L.marker(
+            [-32.9283, 151.7817],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+        
+    
+            var popup_9ba7e11dc84e46d3a351ff173406787a = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_61557dac0cb34ea8b2c214f5697a02f7 = $(`<div id="html_61557dac0cb34ea8b2c214f5697a02f7" style="width: 100.0%; height: 100.0%;">To Sydney: 90$. <br><br> </div>`)[0];
+                popup_9ba7e11dc84e46d3a351ff173406787a.setContent(html_61557dac0cb34ea8b2c214f5697a02f7);
+            
+
+            marker_acab386203ad4bf1a911885820c6d35b.bindPopup(popup_9ba7e11dc84e46d3a351ff173406787a)
+            ;
+
+            
+        
+    
+        marker_acab386203ad4bf1a911885820c6d35b.bindTooltip(
+            `<div>`
+            + `From City: Newcastle` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                var beautify_icon_bcff561564ed4735b60968f56ffc51f7 = new L.BeautifyIcon.icon({
+  "backgroundColor": "#FFF",
+  "borderColor": "#7133b3",
+  "borderWidth": 3,
+  "icon": "plane",
+  "iconShape": "marker",
+  "innerIconStyle": "",
+  "isAlphaNumericIcon": false,
+  "spin": true,
+  "textColor": "#b3334f"
+})
+                marker_acab386203ad4bf1a911885820c6d35b.setIcon(beautify_icon_bcff561564ed4735b60968f56ffc51f7);
+            
+    
+        var marker_c4d42ec1e3a349e0ae7361fd7a2d8ef7 = L.marker(
+            [-31.9539, 141.4539],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+        
+    
+            var popup_783bf2b2758143c799fead68422bd1a4 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_df3e4c7033984a5a9750e624aa97d730 = $(`<div id="html_df3e4c7033984a5a9750e624aa97d730" style="width: 100.0%; height: 100.0%;">To Sydney: 130$. <br><br> To Adelaide: 100$. <br><br> </div>`)[0];
+                popup_783bf2b2758143c799fead68422bd1a4.setContent(html_df3e4c7033984a5a9750e624aa97d730);
+            
+
+            marker_c4d42ec1e3a349e0ae7361fd7a2d8ef7.bindPopup(popup_783bf2b2758143c799fead68422bd1a4)
+            ;
+
+            
+        
+    
+        marker_c4d42ec1e3a349e0ae7361fd7a2d8ef7.bindTooltip(
+            `<div>`
+            + `From City: BrokenHill` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                var beautify_icon_54bf175a827b44658167618d53ae7991 = new L.BeautifyIcon.icon({
+  "backgroundColor": "#FFF",
+  "borderColor": "#7133b3",
+  "borderWidth": 3,
+  "icon": "plane",
+  "iconShape": "marker",
+  "innerIconStyle": "",
+  "isAlphaNumericIcon": false,
+  "spin": true,
+  "textColor": "#b3334f"
+})
+                marker_c4d42ec1e3a349e0ae7361fd7a2d8ef7.setIcon(beautify_icon_54bf175a827b44658167618d53ae7991);
+            
+    
+        var marker_8bf3b46f13774c71b355b680a07018ea = L.marker(
+            [-37.8136, 144.9631],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+        
+    
+            var popup_fc9419b963c840b8bc49d36a5a5d9130 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_87b46e7476bb415ca320ed6ab290b43d = $(`<div id="html_87b46e7476bb415ca320ed6ab290b43d" style="width: 100.0%; height: 100.0%;">To Sydney: 180$. <br><br> To Canberra: 140$. <br><br> To Adelaide: 175$. <br><br> To Hobart: 130$. <br><br> To Bendigo: 70$. <br><br> To Launceston: 100$. <br><br> </div>`)[0];
+                popup_fc9419b963c840b8bc49d36a5a5d9130.setContent(html_87b46e7476bb415ca320ed6ab290b43d);
+            
+
+            marker_8bf3b46f13774c71b355b680a07018ea.bindPopup(popup_fc9419b963c840b8bc49d36a5a5d9130)
+            ;
+
+            
+        
+    
+        marker_8bf3b46f13774c71b355b680a07018ea.bindTooltip(
+            `<div>`
+            + `From City: Melbourne` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                var beautify_icon_ef531b99e28c4c4b910815d4d10729f0 = new L.BeautifyIcon.icon({
+  "backgroundColor": "#FFF",
+  "borderColor": "#7133b3",
+  "borderWidth": 3,
+  "icon": "plane",
+  "iconShape": "marker",
+  "innerIconStyle": "",
+  "isAlphaNumericIcon": false,
+  "spin": true,
+  "textColor": "#b3334f"
+})
+                marker_8bf3b46f13774c71b355b680a07018ea.setIcon(beautify_icon_ef531b99e28c4c4b910815d4d10729f0);
+            
+    
+        var marker_f14bf9c5b41042cfa2a4557e6b8e2367 = L.marker(
+            [-36.757, 144.2794],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+        
+    
+            var popup_2a3c8174b6c949688a89e675eecab0be = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_4e8c26ebcf0f4bbc9fedd6d173d83b7e = $(`<div id="html_4e8c26ebcf0f4bbc9fedd6d173d83b7e" style="width: 100.0%; height: 100.0%;">To Melbourne: 70$. <br><br> </div>`)[0];
+                popup_2a3c8174b6c949688a89e675eecab0be.setContent(html_4e8c26ebcf0f4bbc9fedd6d173d83b7e);
+            
+
+            marker_f14bf9c5b41042cfa2a4557e6b8e2367.bindPopup(popup_2a3c8174b6c949688a89e675eecab0be)
+            ;
+
+            
+        
+    
+        marker_f14bf9c5b41042cfa2a4557e6b8e2367.bindTooltip(
+            `<div>`
+            + `From City: Bendigo` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                var beautify_icon_87942b43539a4a039248f25f93cb7b91 = new L.BeautifyIcon.icon({
+  "backgroundColor": "#FFF",
+  "borderColor": "#7133b3",
+  "borderWidth": 3,
+  "icon": "plane",
+  "iconShape": "marker",
+  "innerIconStyle": "",
+  "isAlphaNumericIcon": false,
+  "spin": true,
+  "textColor": "#b3334f"
+})
+                marker_f14bf9c5b41042cfa2a4557e6b8e2367.setIcon(beautify_icon_87942b43539a4a039248f25f93cb7b91);
+            
+    
+        var marker_c3204b64c9f04374a32781242a5155a5 = L.marker(
+            [-34.9285, 138.6007],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+        
+    
+            var popup_e528034592e34c0d9c8f878b5bced30d = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_18b8706ba3154627978ec851ce7060f2 = $(`<div id="html_18b8706ba3154627978ec851ce7060f2" style="width: 100.0%; height: 100.0%;">To Melbourne: 175$. <br><br> To BrokenHill: 100$. <br><br> To Perth: 220$. <br><br> To Darwin: 230$. <br><br> To PtAugusta: 50$. <br><br> </div>`)[0];
+                popup_e528034592e34c0d9c8f878b5bced30d.setContent(html_18b8706ba3154627978ec851ce7060f2);
+            
+
+            marker_c3204b64c9f04374a32781242a5155a5.bindPopup(popup_e528034592e34c0d9c8f878b5bced30d)
+            ;
+
+            
+        
+    
+        marker_c3204b64c9f04374a32781242a5155a5.bindTooltip(
+            `<div>`
+            + `From City: Adelaide` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                var beautify_icon_866e7c13a7fc4a978b7395725d7bd2ff = new L.BeautifyIcon.icon({
+  "backgroundColor": "#FFF",
+  "borderColor": "#7133b3",
+  "borderWidth": 3,
+  "icon": "plane",
+  "iconShape": "marker",
+  "innerIconStyle": "",
+  "isAlphaNumericIcon": false,
+  "spin": true,
+  "textColor": "#b3334f"
+})
+                marker_c3204b64c9f04374a32781242a5155a5.setIcon(beautify_icon_866e7c13a7fc4a978b7395725d7bd2ff);
+            
+    
+        var marker_880e4819421a441bb6aff5b9ca8045a9 = L.marker(
+            [-12.4634, 130.8456],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+        
+    
+            var popup_5164f8903d164016b17e1438175d6e8e = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_938c6636da744bf9b40a184027b9708c = $(`<div id="html_938c6636da744bf9b40a184027b9708c" style="width: 100.0%; height: 100.0%;">To Adelaide: 230$. <br><br> To AliceSprings: 120$. <br><br> To Brisbane: 240$. <br><br> To MtIsa: 120$. <br><br> </div>`)[0];
+                popup_5164f8903d164016b17e1438175d6e8e.setContent(html_938c6636da744bf9b40a184027b9708c);
+            
+
+            marker_880e4819421a441bb6aff5b9ca8045a9.bindPopup(popup_5164f8903d164016b17e1438175d6e8e)
+            ;
+
+            
+        
+    
+        marker_880e4819421a441bb6aff5b9ca8045a9.bindTooltip(
+            `<div>`
+            + `From City: Darwin` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                var beautify_icon_18888081a85d418fb0e6d7639d587ad8 = new L.BeautifyIcon.icon({
+  "backgroundColor": "#FFF",
+  "borderColor": "#7133b3",
+  "borderWidth": 3,
+  "icon": "plane",
+  "iconShape": "marker",
+  "innerIconStyle": "",
+  "isAlphaNumericIcon": false,
+  "spin": true,
+  "textColor": "#b3334f"
+})
+                marker_880e4819421a441bb6aff5b9ca8045a9.setIcon(beautify_icon_18888081a85d418fb0e6d7639d587ad8);
+            
+    
+        var marker_f89616fa1c0f4d0b88cbee0ad1b8faf7 = L.marker(
+            [-23.698, 133.8807],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+        
+    
+            var popup_754ff9853f474fb297696a5d05697931 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_76a077f07c8441468ca160396ad60293 = $(`<div id="html_76a077f07c8441468ca160396ad60293" style="width: 100.0%; height: 100.0%;">To Darwin: 120$. <br><br> </div>`)[0];
+                popup_754ff9853f474fb297696a5d05697931.setContent(html_76a077f07c8441468ca160396ad60293);
+            
+
+            marker_f89616fa1c0f4d0b88cbee0ad1b8faf7.bindPopup(popup_754ff9853f474fb297696a5d05697931)
+            ;
+
+            
+        
+    
+        marker_f89616fa1c0f4d0b88cbee0ad1b8faf7.bindTooltip(
+            `<div>`
+            + `From City: AliceSprings` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                var beautify_icon_01b984c2906e46dba14b037184ca472c = new L.BeautifyIcon.icon({
+  "backgroundColor": "#FFF",
+  "borderColor": "#7133b3",
+  "borderWidth": 3,
+  "icon": "plane",
+  "iconShape": "marker",
+  "innerIconStyle": "",
+  "isAlphaNumericIcon": false,
+  "spin": true,
+  "textColor": "#b3334f"
+})
+                marker_f89616fa1c0f4d0b88cbee0ad1b8faf7.setIcon(beautify_icon_01b984c2906e46dba14b037184ca472c);
+            
+    
+        var marker_ef1151f280e3401fba7bbaa5f8d94e5f = L.marker(
+            [-31.9505, 115.8605],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+        
+    
+            var popup_b3455fe498ac4bee9be05883b00242f1 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_030f56016cc248f2ac8212a14edde4c0 = $(`<div id="html_030f56016cc248f2ac8212a14edde4c0" style="width: 100.0%; height: 100.0%;">To Adelaide: 220$. <br><br> To Albany: 100$. <br><br> To Kalgoorlie: 80$. <br><br> To Broome: 90$. <br><br> </div>`)[0];
+                popup_b3455fe498ac4bee9be05883b00242f1.setContent(html_030f56016cc248f2ac8212a14edde4c0);
+            
+
+            marker_ef1151f280e3401fba7bbaa5f8d94e5f.bindPopup(popup_b3455fe498ac4bee9be05883b00242f1)
+            ;
+
+            
+        
+    
+        marker_ef1151f280e3401fba7bbaa5f8d94e5f.bindTooltip(
+            `<div>`
+            + `From City: Perth` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                var beautify_icon_38006fa02faa430a8f38dd8fa8c0114c = new L.BeautifyIcon.icon({
+  "backgroundColor": "#FFF",
+  "borderColor": "#7133b3",
+  "borderWidth": 3,
+  "icon": "plane",
+  "iconShape": "marker",
+  "innerIconStyle": "",
+  "isAlphaNumericIcon": false,
+  "spin": true,
+  "textColor": "#b3334f"
+})
+                marker_ef1151f280e3401fba7bbaa5f8d94e5f.setIcon(beautify_icon_38006fa02faa430a8f38dd8fa8c0114c);
+            
+    
+        var marker_b7d01b4ff43d481ab48c8d9e918e9f1c = L.marker(
+            [-35.0269, 117.8837],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+        
+    
+            var popup_4ac3cd9113af4f7ea5d9508ca5da4146 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_4cf5907cebb74d14b856ef40f475af5b = $(`<div id="html_4cf5907cebb74d14b856ef40f475af5b" style="width: 100.0%; height: 100.0%;">To Perth: 100$. <br><br> </div>`)[0];
+                popup_4ac3cd9113af4f7ea5d9508ca5da4146.setContent(html_4cf5907cebb74d14b856ef40f475af5b);
+            
+
+            marker_b7d01b4ff43d481ab48c8d9e918e9f1c.bindPopup(popup_4ac3cd9113af4f7ea5d9508ca5da4146)
+            ;
+
+            
+        
+    
+        marker_b7d01b4ff43d481ab48c8d9e918e9f1c.bindTooltip(
+            `<div>`
+            + `From City: Albany` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                var beautify_icon_10d23bd6d88d4c58baccf04d2dca35a8 = new L.BeautifyIcon.icon({
+  "backgroundColor": "#FFF",
+  "borderColor": "#7133b3",
+  "borderWidth": 3,
+  "icon": "plane",
+  "iconShape": "marker",
+  "innerIconStyle": "",
+  "isAlphaNumericIcon": false,
+  "spin": true,
+  "textColor": "#b3334f"
+})
+                marker_b7d01b4ff43d481ab48c8d9e918e9f1c.setIcon(beautify_icon_10d23bd6d88d4c58baccf04d2dca35a8);
+            
+    
+        var marker_f151326ee3ec4975b6fbbf120d5d582b = L.marker(
+            [-30.749, 121.466],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+        
+    
+            var popup_d3d0f7d117874acc99b039da83ebef0c = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_7da87f9ed6cd4ebcb6c14415a50af1ef = $(`<div id="html_7da87f9ed6cd4ebcb6c14415a50af1ef" style="width: 100.0%; height: 100.0%;">To Perth: 80$. <br><br> </div>`)[0];
+                popup_d3d0f7d117874acc99b039da83ebef0c.setContent(html_7da87f9ed6cd4ebcb6c14415a50af1ef);
+            
+
+            marker_f151326ee3ec4975b6fbbf120d5d582b.bindPopup(popup_d3d0f7d117874acc99b039da83ebef0c)
+            ;
+
+            
+        
+    
+        marker_f151326ee3ec4975b6fbbf120d5d582b.bindTooltip(
+            `<div>`
+            + `From City: Kalgoorlie` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                var beautify_icon_c48c973e1f6e411bbcd9192d876cd13b = new L.BeautifyIcon.icon({
+  "backgroundColor": "#FFF",
+  "borderColor": "#7133b3",
+  "borderWidth": 3,
+  "icon": "plane",
+  "iconShape": "marker",
+  "innerIconStyle": "",
+  "isAlphaNumericIcon": false,
+  "spin": true,
+  "textColor": "#b3334f"
+})
+                marker_f151326ee3ec4975b6fbbf120d5d582b.setIcon(beautify_icon_c48c973e1f6e411bbcd9192d876cd13b);
+            
+    
+        var marker_9b490af93b44430da5f75d6d2801282a = L.marker(
+            [-17.9644, 122.2304],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+        
+    
+            var popup_c29525b702a24d158a21ff5cd23c5f31 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_4bfbada70bae419fa1c541b6d77801a0 = $(`<div id="html_4bfbada70bae419fa1c541b6d77801a0" style="width: 100.0%; height: 100.0%;">To Perth: 90$. <br><br> </div>`)[0];
+                popup_c29525b702a24d158a21ff5cd23c5f31.setContent(html_4bfbada70bae419fa1c541b6d77801a0);
+            
+
+            marker_9b490af93b44430da5f75d6d2801282a.bindPopup(popup_c29525b702a24d158a21ff5cd23c5f31)
+            ;
+
+            
+        
+    
+        marker_9b490af93b44430da5f75d6d2801282a.bindTooltip(
+            `<div>`
+            + `From City: Broome` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                var beautify_icon_4f2a6b3d04a742f89e3acde5999d3c68 = new L.BeautifyIcon.icon({
+  "backgroundColor": "#FFF",
+  "borderColor": "#7133b3",
+  "borderWidth": 3,
+  "icon": "plane",
+  "iconShape": "marker",
+  "innerIconStyle": "",
+  "isAlphaNumericIcon": false,
+  "spin": true,
+  "textColor": "#b3334f"
+})
+                marker_9b490af93b44430da5f75d6d2801282a.setIcon(beautify_icon_4f2a6b3d04a742f89e3acde5999d3c68);
+            
+    
+        var marker_8b21f8a4b223457cab6c88a2a8c0ec68 = L.marker(
+            [-41.4332, 147.1441],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+        
+    
+            var popup_7e832365298c49159c072a12fa5a911a = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_30671c3d666647b0a5148faa0a6bf2a2 = $(`<div id="html_30671c3d666647b0a5148faa0a6bf2a2" style="width: 100.0%; height: 100.0%;">To Melbourne: 100$. <br><br> To Hobart: 80$. <br><br> </div>`)[0];
+                popup_7e832365298c49159c072a12fa5a911a.setContent(html_30671c3d666647b0a5148faa0a6bf2a2);
+            
+
+            marker_8b21f8a4b223457cab6c88a2a8c0ec68.bindPopup(popup_7e832365298c49159c072a12fa5a911a)
+            ;
+
+            
+        
+    
+        marker_8b21f8a4b223457cab6c88a2a8c0ec68.bindTooltip(
+            `<div>`
+            + `From City: Launceston` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                var beautify_icon_d6cfee90b85e459bb1f247a2df094956 = new L.BeautifyIcon.icon({
+  "backgroundColor": "#FFF",
+  "borderColor": "#7133b3",
+  "borderWidth": 3,
+  "icon": "plane",
+  "iconShape": "marker",
+  "innerIconStyle": "",
+  "isAlphaNumericIcon": false,
+  "spin": true,
+  "textColor": "#b3334f"
+})
+                marker_8b21f8a4b223457cab6c88a2a8c0ec68.setIcon(beautify_icon_d6cfee90b85e459bb1f247a2df094956);
+            
+    
+        var marker_09145f54e1d740edaf82c0a7a93d7188 = L.marker(
+            [-42.8821, 147.3272],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+        
+    
+            var popup_cb0104409168420799f62d1b49c1f93b = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_2b61ba5470fb475295eb15dc7f39f6af = $(`<div id="html_2b61ba5470fb475295eb15dc7f39f6af" style="width: 100.0%; height: 100.0%;">To Melbourne: 130$. <br><br> To Launceston: 80$. <br><br> </div>`)[0];
+                popup_cb0104409168420799f62d1b49c1f93b.setContent(html_2b61ba5470fb475295eb15dc7f39f6af);
+            
+
+            marker_09145f54e1d740edaf82c0a7a93d7188.bindPopup(popup_cb0104409168420799f62d1b49c1f93b)
+            ;
+
+            
+        
+    
+        marker_09145f54e1d740edaf82c0a7a93d7188.bindTooltip(
+            `<div>`
+            + `From City: Hobart` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                var beautify_icon_9f6294f148124bbaacb66cfc56876a27 = new L.BeautifyIcon.icon({
+  "backgroundColor": "#FFF",
+  "borderColor": "#7133b3",
+  "borderWidth": 3,
+  "icon": "plane",
+  "iconShape": "marker",
+  "innerIconStyle": "",
+  "isAlphaNumericIcon": false,
+  "spin": true,
+  "textColor": "#b3334f"
+})
+                marker_09145f54e1d740edaf82c0a7a93d7188.setIcon(beautify_icon_9f6294f148124bbaacb66cfc56876a27);
+            
+    
+        var marker_692a0b8f8796402c9cefaae2d0a4a03a = L.marker(
+            [-27.4698, 153.0251],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+        
+    
+            var popup_65fdea1459e94a8fbd4ce9c831e3440c = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_b84e62f5ee8b495b99626a4caee5cd4e = $(`<div id="html_b84e62f5ee8b495b99626a4caee5cd4e" style="width: 100.0%; height: 100.0%;">To Sydney: 170$. <br><br> To MtIsa: 170$. <br><br> To Rockhampton: 180$. <br><br> To Cairns: 230$. <br><br> To Darwin: 240$. <br><br> </div>`)[0];
+                popup_65fdea1459e94a8fbd4ce9c831e3440c.setContent(html_b84e62f5ee8b495b99626a4caee5cd4e);
+            
+
+            marker_692a0b8f8796402c9cefaae2d0a4a03a.bindPopup(popup_65fdea1459e94a8fbd4ce9c831e3440c)
+            ;
+
+            
+        
+    
+        marker_692a0b8f8796402c9cefaae2d0a4a03a.bindTooltip(
+            `<div>`
+            + `From City: Brisbane` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                var beautify_icon_0db2e458560243dc91283f70f252d0df = new L.BeautifyIcon.icon({
+  "backgroundColor": "#FFF",
+  "borderColor": "#7133b3",
+  "borderWidth": 3,
+  "icon": "plane",
+  "iconShape": "marker",
+  "innerIconStyle": "",
+  "isAlphaNumericIcon": false,
+  "spin": true,
+  "textColor": "#b3334f"
+})
+                marker_692a0b8f8796402c9cefaae2d0a4a03a.setIcon(beautify_icon_0db2e458560243dc91283f70f252d0df);
+            
+    
+        var marker_150c9bf0d6094210949d64795f8791f0 = L.marker(
+            [-20.7256, 139.4927],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+        
+    
+            var popup_3825a3a45f7e45f5b5b3f49714a1abfc = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_da4888c9009b4f92b2a4369b3654cdf9 = $(`<div id="html_da4888c9009b4f92b2a4369b3654cdf9" style="width: 100.0%; height: 100.0%;">To Brisbane: 170$. <br><br> To Darwin: 120$. <br><br> </div>`)[0];
+                popup_3825a3a45f7e45f5b5b3f49714a1abfc.setContent(html_da4888c9009b4f92b2a4369b3654cdf9);
+            
+
+            marker_150c9bf0d6094210949d64795f8791f0.bindPopup(popup_3825a3a45f7e45f5b5b3f49714a1abfc)
+            ;
+
+            
+        
+    
+        marker_150c9bf0d6094210949d64795f8791f0.bindTooltip(
+            `<div>`
+            + `From City: MtIsa` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                var beautify_icon_b73a5f31fc0d4a93a3a3df5f25d48ca5 = new L.BeautifyIcon.icon({
+  "backgroundColor": "#FFF",
+  "borderColor": "#7133b3",
+  "borderWidth": 3,
+  "icon": "plane",
+  "iconShape": "marker",
+  "innerIconStyle": "",
+  "isAlphaNumericIcon": false,
+  "spin": true,
+  "textColor": "#b3334f"
+})
+                marker_150c9bf0d6094210949d64795f8791f0.setIcon(beautify_icon_b73a5f31fc0d4a93a3a3df5f25d48ca5);
+            
+    
+        var marker_347388addb784c6eb29138a025ed8613 = L.marker(
+            [-23.3791, 150.51],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+        
+    
+            var popup_051fb619539346078079ec382b7a2b62 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_878b79c850a44983a5f5e893bf861f5f = $(`<div id="html_878b79c850a44983a5f5e893bf861f5f" style="width: 100.0%; height: 100.0%;">To Brisbane: 180$. <br><br> </div>`)[0];
+                popup_051fb619539346078079ec382b7a2b62.setContent(html_878b79c850a44983a5f5e893bf861f5f);
+            
+
+            marker_347388addb784c6eb29138a025ed8613.bindPopup(popup_051fb619539346078079ec382b7a2b62)
+            ;
+
+            
+        
+    
+        marker_347388addb784c6eb29138a025ed8613.bindTooltip(
+            `<div>`
+            + `From City: Rockhampton` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                var beautify_icon_bf60ae2fb6a6446290db5fe2fdff6e8e = new L.BeautifyIcon.icon({
+  "backgroundColor": "#FFF",
+  "borderColor": "#7133b3",
+  "borderWidth": 3,
+  "icon": "plane",
+  "iconShape": "marker",
+  "innerIconStyle": "",
+  "isAlphaNumericIcon": false,
+  "spin": true,
+  "textColor": "#b3334f"
+})
+                marker_347388addb784c6eb29138a025ed8613.setIcon(beautify_icon_bf60ae2fb6a6446290db5fe2fdff6e8e);
+            
+    
+        var marker_e0336e15934b450f88cfb57d5a1484e0 = L.marker(
+            [-16.9186, 145.7781],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+        
+    
+            var popup_aeadbf12fe1047c9a37563ac8285786d = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_49bb667a26ee4b50a5f4a0e2625d12f2 = $(`<div id="html_49bb667a26ee4b50a5f4a0e2625d12f2" style="width: 100.0%; height: 100.0%;">To Brisbane: 230$. <br><br> </div>`)[0];
+                popup_aeadbf12fe1047c9a37563ac8285786d.setContent(html_49bb667a26ee4b50a5f4a0e2625d12f2);
+            
+
+            marker_e0336e15934b450f88cfb57d5a1484e0.bindPopup(popup_aeadbf12fe1047c9a37563ac8285786d)
+            ;
+
+            
+        
+    
+        marker_e0336e15934b450f88cfb57d5a1484e0.bindTooltip(
+            `<div>`
+            + `From City: Cairns` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                var beautify_icon_edac55ab85b642debe4660028bce378a = new L.BeautifyIcon.icon({
+  "backgroundColor": "#FFF",
+  "borderColor": "#7133b3",
+  "borderWidth": 3,
+  "icon": "plane",
+  "iconShape": "marker",
+  "innerIconStyle": "",
+  "isAlphaNumericIcon": false,
+  "spin": true,
+  "textColor": "#b3334f"
+})
+                marker_e0336e15934b450f88cfb57d5a1484e0.setIcon(beautify_icon_edac55ab85b642debe4660028bce378a);
+            
+    
+        var marker_ba0920db936e4eafb385ee5b723dd248 = L.marker(
+            [-32.4952, 137.7894],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+        
+    
+            var popup_a1669575b8f348c9a9ad1b5c1519cdeb = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_1ca74c2626b14acb935593f9f82817d5 = $(`<div id="html_1ca74c2626b14acb935593f9f82817d5" style="width: 100.0%; height: 100.0%;">To Adelaide: 50$. <br><br> </div>`)[0];
+                popup_a1669575b8f348c9a9ad1b5c1519cdeb.setContent(html_1ca74c2626b14acb935593f9f82817d5);
+            
+
+            marker_ba0920db936e4eafb385ee5b723dd248.bindPopup(popup_a1669575b8f348c9a9ad1b5c1519cdeb)
+            ;
+
+            
+        
+    
+        marker_ba0920db936e4eafb385ee5b723dd248.bindTooltip(
+            `<div>`
+            + `From City: PtAugusta` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                var beautify_icon_ffd56a28be3247e2b06281485a4eeded = new L.BeautifyIcon.icon({
+  "backgroundColor": "#FFF",
+  "borderColor": "#7133b3",
+  "borderWidth": 3,
+  "icon": "plane",
+  "iconShape": "marker",
+  "innerIconStyle": "",
+  "isAlphaNumericIcon": false,
+  "spin": true,
+  "textColor": "#b3334f"
+})
+                marker_ba0920db936e4eafb385ee5b723dd248.setIcon(beautify_icon_ffd56a28be3247e2b06281485a4eeded);
+            
+    
+            var options = {
+              position: "topleft",
+              draw: {"polyline": {"allowIntersection": false}},
+              edit: {"poly": {"allowIntersection": false}}
+            }
+            // FeatureGroup is to store editable layers.
+            var drawnItems = new L.featureGroup().addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            options.edit.featureGroup = drawnItems
+            var draw_control_e1c3e0f95f354712ae558b686372102b = new L.Control.Draw(options).addTo(map_a2560e2900d24e5483474da2d8b55ad6)
+            map_a2560e2900d24e5483474da2d8b55ad6.on(L.Draw.Event.CREATED, function (event) {
+              var layer = event.layer,
+                  type = event.layerType,
+                  coords;
+              var coords = JSON.stringify(layer.toGeoJSON());
+              layer.on('click', function() {
+                alert(coords);
+                console.log(coords);
+                });
+               drawnItems.addLayer(layer);
+             });
+            map_a2560e2900d24e5483474da2d8b55ad6.on('draw:created', function(e) {
+                drawnItems.addLayer(e.layer);
+            });
+            document.getElementById('export').onclick = function(e) {
+              var data = drawnItems.toGeoJSON();
+              var convertedData = 'text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(data));
+              document.getElementById('export').setAttribute('href', 'data:' + convertedData);
+              document.getElementById('export').setAttribute(
+                'download',
+                "my_data.geojson"
+              );
+            }
+            
+    
+                var poly_line_91e7eccd335342ed9fbf43d2ef45f864 = L.polyline(
+                    [[-33.8688, 151.2093], [-36.10418666666667, 148.50261333333336], [-37.8136, 144.9631]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff8c00",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff8c00",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 4.25
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_1a6525ad65aa4bb58ce2d53f6fcdbd47 = L.polyline.antPath(
+                  [[-33.8688, 151.2093], [-36.10418666666667, 148.50261333333336], [-37.8136, 144.9631]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 2.25
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_1a6525ad65aa4bb58ce2d53f6fcdbd47.bindTooltip(
+            `<div>`
+            + `Price: 180$ <br>Air Space Class: B<br>Engine Model: CF6-80E142<br>Aircraft Model: A330-203` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_1a6525ad65aa4bb58ce2d53f6fcdbd47.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_44e5e7950ec34038a957e894964d61bc = L.polyline(
+                    [[-33.8688, 151.2093], [-30.2427, 151.9961466666667], [-27.4698, 153.0251]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff0000",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff0000",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 4.125
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_8d3db93a497948d095edd415dae19f4c = L.polyline.antPath(
+                  [[-33.8688, 151.2093], [-30.2427, 151.9961466666667], [-27.4698, 153.0251]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 2.125
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_8d3db93a497948d095edd415dae19f4c.bindTooltip(
+            `<div>`
+            + `Price: 170$ <br>Air Space Class: A<br>Engine Model: CF6-80E142<br>Aircraft Model: A330-202` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_8d3db93a497948d095edd415dae19f4c.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_4880a9b8eb0d4f3db3f2a4ab93c7bf21 = L.polyline(
+                    [[-33.8688, 151.2093], [-34.66899, 150.30827], [-35.2809, 149.13]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff8c00",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff8c00",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3.5
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_07c67000e8a84286aba72072495cd050 = L.polyline.antPath(
+                  [[-33.8688, 151.2093], [-34.66899, 150.30827], [-35.2809, 149.13]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 1.5
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_07c67000e8a84286aba72072495cd050.bindTooltip(
+            `<div>`
+            + `Price: 120$ <br>Air Space Class: B<br>Engine Model: CFM56-3B1<br>Aircraft Model: B737-3B7` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_07c67000e8a84286aba72072495cd050.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_0d87de34e8fa4615a0d20ed0beb99615 = L.polyline(
+                    [[-35.2809, 149.13], [-34.480709999999995, 150.03103], [-33.8688, 151.2093]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff8c00",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff8c00",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3.5
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_c0e264b511624b70978c05403644de0c = L.polyline.antPath(
+                  [[-35.2809, 149.13], [-34.480709999999995, 150.03103], [-33.8688, 151.2093]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 1.5
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_c0e264b511624b70978c05403644de0c.bindTooltip(
+            `<div>`
+            + `Price: 120$ <br>Air Space Class: B<br>Engine Model: CFM-56-3<br>Aircraft Model: B737-476` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_c0e264b511624b70978c05403644de0c.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_b19af409d5d24f958f384e81842c57ab = L.polyline(
+                    [[-33.8688, 151.2093], [-33.33585, 151.45734], [-32.9283, 151.7817]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff0000",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff0000",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3.125
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_82c0abc26b3d4fc0a603267cf03aeb89 = L.polyline.antPath(
+                  [[-33.8688, 151.2093], [-33.33585, 151.45734], [-32.9283, 151.7817]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 1.125
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_82c0abc26b3d4fc0a603267cf03aeb89.bindTooltip(
+            `<div>`
+            + `Price: 90$ <br>Air Space Class: A<br>Engine Model: V2527-5A<br>Aircraft Model: A320-232` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_82c0abc26b3d4fc0a603267cf03aeb89.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_2ef0f81beab44d8abb4036b0e87f1a5d = L.polyline(
+                    [[-32.9283, 151.7817], [-33.46125, 151.53366], [-33.8688, 151.2093]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff0000",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff0000",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3.125
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_06ac2c1765994d2e96c404614d5ba366 = L.polyline.antPath(
+                  [[-32.9283, 151.7817], [-33.46125, 151.53366], [-33.8688, 151.2093]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 1.125
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_06ac2c1765994d2e96c404614d5ba366.bindTooltip(
+            `<div>`
+            + `Price: 90$ <br>Air Space Class: A<br>Engine Model: V2527-5A<br>Aircraft Model: A320-232` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_06ac2c1765994d2e96c404614d5ba366.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_114ba2ec9ea141d79e2e689f8a28c60e = L.polyline(
+                    [[-33.8688, 151.2093], [-32.78369, 146.98196000000002], [-31.9539, 141.4539]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff8c00",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff8c00",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3.625
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_99f94bd0a0ba41d1809b5889603d5a99 = L.polyline.antPath(
+                  [[-33.8688, 151.2093], [-32.78369, 146.98196000000002], [-31.9539, 141.4539]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 1.625
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_99f94bd0a0ba41d1809b5889603d5a99.bindTooltip(
+            `<div>`
+            + `Price: 130$ <br>Air Space Class: B<br>Engine Model: V2527-5A<br>Aircraft Model: A320-232` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_99f94bd0a0ba41d1809b5889603d5a99.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_4c68bb23a2494889b5d91c522a123a8e = L.polyline(
+                    [[-31.9539, 141.4539], [-33.03901, 145.68124], [-33.8688, 151.2093]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff8c00",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff8c00",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3.625
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_65bdd8cfc3c84c7c97e5a508812ceedb = L.polyline.antPath(
+                  [[-31.9539, 141.4539], [-33.03901, 145.68124], [-33.8688, 151.2093]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 1.625
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_65bdd8cfc3c84c7c97e5a508812ceedb.bindTooltip(
+            `<div>`
+            + `Price: 130$ <br>Air Space Class: B<br>Engine Model: V2527-5A<br>Aircraft Model: A320-232` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_65bdd8cfc3c84c7c97e5a508812ceedb.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_34d08663d84b45db9e3e65314fec3485 = L.polyline(
+                    [[-37.8136, 144.9631], [-35.57821333333333, 147.66978666666668], [-33.8688, 151.2093]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#fff200",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#fff200",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 4.25
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_0f19717d97324c54b6a3a05f3fa6a315 = L.polyline.antPath(
+                  [[-37.8136, 144.9631], [-35.57821333333333, 147.66978666666668], [-33.8688, 151.2093]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 2.25
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_0f19717d97324c54b6a3a05f3fa6a315.bindTooltip(
+            `<div>`
+            + `Price: 180$ <br>Air Space Class: C<br>Engine Model: 772B-60<br>Aircraft Model: A330-243` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_0f19717d97324c54b6a3a05f3fa6a315.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_2237024e96f04691b4065ecee4d1cd61 = L.polyline(
+                    [[-37.8136, 144.9631], [-36.37840333333334, 146.76875666666666], [-35.2809, 149.13]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff8c00",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff8c00",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3.75
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_f64e9396346c42c79e6bd7da87bc4d0c = L.polyline.antPath(
+                  [[-37.8136, 144.9631], [-36.37840333333334, 146.76875666666666], [-35.2809, 149.13]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 1.75
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_f64e9396346c42c79e6bd7da87bc4d0c.bindTooltip(
+            `<div>`
+            + `Price: 140$ <br>Air Space Class: B<br>Engine Model: V2527-5A<br>Aircraft Model: A320-232` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_f64e9396346c42c79e6bd7da87bc4d0c.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_fce52e305afe4531b9c7aad5c12d1d54 = L.polyline(
+                    [[-35.2809, 149.13], [-36.71609666666667, 147.32434333333333], [-37.8136, 144.9631]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff8c00",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff8c00",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3.75
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_e2bd094b1fb24d5ba6f612fa81831f7e = L.polyline.antPath(
+                  [[-35.2809, 149.13], [-36.71609666666667, 147.32434333333333], [-37.8136, 144.9631]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 1.75
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_e2bd094b1fb24d5ba6f612fa81831f7e.bindTooltip(
+            `<div>`
+            + `Price: 140$ <br>Air Space Class: B<br>Engine Model: V2527-5A<br>Aircraft Model: A320-232` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_e2bd094b1fb24d5ba6f612fa81831f7e.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_96b15fcddd414e698881b70a630d80b2 = L.polyline(
+                    [[-37.8136, 144.9631], [-36.178709999999995, 142.20606], [-34.9285, 138.6007]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff0000",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff0000",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 4.1875
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_711caa84e129412fb21a143de838caa7 = L.polyline.antPath(
+                  [[-37.8136, 144.9631], [-36.178709999999995, 142.20606], [-34.9285, 138.6007]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 2.1875
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_711caa84e129412fb21a143de838caa7.bindTooltip(
+            `<div>`
+            + `Price: 175$ <br>Air Space Class: A<br>Engine Model: CFM56-3B1<br>Aircraft Model: B737-3B7` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_711caa84e129412fb21a143de838caa7.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_807354100b4040118966534d06f0b2ad = L.polyline(
+                    [[-37.8136, 144.9631], [-40.68575, 145.98754333333332], [-42.8821, 147.3272]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff0000",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff0000",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3.625
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_9f0492d1a96144c78751a9640cf21461 = L.polyline.antPath(
+                  [[-37.8136, 144.9631], [-40.68575, 145.98754333333332], [-42.8821, 147.3272]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 1.625
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_9f0492d1a96144c78751a9640cf21461.bindTooltip(
+            `<div>`
+            + `Price: 130$ <br>Air Space Class: A<br>Engine Model: V2527-5A<br>Aircraft Model: A320-232` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_9f0492d1a96144c78751a9640cf21461.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_66a267396a2e405da40c9150b95c41eb = L.polyline(
+                    [[-37.8136, 144.9631], [-37.21486, 144.66683], [-36.757, 144.2794]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff0000",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff0000",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 2.875
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_b32628e1e5bd40f7873ed85cf6fecc5e = L.polyline.antPath(
+                  [[-37.8136, 144.9631], [-37.21486, 144.66683], [-36.757, 144.2794]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 0.875
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_b32628e1e5bd40f7873ed85cf6fecc5e.bindTooltip(
+            `<div>`
+            + `Price: 70$ <br>Air Space Class: A<br>Engine Model: Unknown<br>Aircraft Model: B717-200` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_b32628e1e5bd40f7873ed85cf6fecc5e.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_316126a624054581a1794a3b65980203 = L.polyline(
+                    [[-36.757, 144.2794], [-37.35574, 144.57567], [-37.8136, 144.9631]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff0000",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff0000",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 2.875
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_704cba7541db4f36a9268a928895a400 = L.polyline.antPath(
+                  [[-36.757, 144.2794], [-37.35574, 144.57567], [-37.8136, 144.9631]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 0.875
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_704cba7541db4f36a9268a928895a400.bindTooltip(
+            `<div>`
+            + `Price: 70$ <br>Air Space Class: A<br>Engine Model: Unknown<br>Aircraft Model: B717-200` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_704cba7541db4f36a9268a928895a400.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_b68ea483f3e44367a6dc9fd2cb2d62c6 = L.polyline(
+                    [[-37.8136, 144.9631], [-39.86470666666667, 145.90820000000002], [-41.4332, 147.1441]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff0000",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff0000",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3.25
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_d5b6fd3ff09a4f69916d9609c5d06262 = L.polyline.antPath(
+                  [[-37.8136, 144.9631], [-39.86470666666667, 145.90820000000002], [-41.4332, 147.1441]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 1.25
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_d5b6fd3ff09a4f69916d9609c5d06262.bindTooltip(
+            `<div>`
+            + `Price: 100$ <br>Air Space Class: A<br>Engine Model: CFM56-3B1<br>Aircraft Model: B737-3B7` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_d5b6fd3ff09a4f69916d9609c5d06262.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_21844c357f214edd9f589faf9939be8d = L.polyline(
+                    [[-34.9285, 138.6007], [-36.56339, 141.35774], [-37.8136, 144.9631]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#fff200",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#fff200",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 4.1875
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_c396ae0e082b49318980d88b19b0aecd = L.polyline.antPath(
+                  [[-34.9285, 138.6007], [-36.56339, 141.35774], [-37.8136, 144.9631]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 2.1875
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_c396ae0e082b49318980d88b19b0aecd.bindTooltip(
+            `<div>`
+            + `Price: 175$ <br>Air Space Class: C<br>Engine Model: CFM56-3B1<br>Aircraft Model: B737-3B7` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_c396ae0e082b49318980d88b19b0aecd.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_bd6c1ab8fdb044e0b69d9e27c04dd3ea = L.polyline(
+                    [[-34.9285, 138.6007], [-33.242893333333335, 139.83708666666666], [-31.9539, 141.4539]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#fff200",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#fff200",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3.25
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_59144ece52bf4d0ab3b992492b86478c = L.polyline.antPath(
+                  [[-34.9285, 138.6007], [-33.242893333333335, 139.83708666666666], [-31.9539, 141.4539]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 1.25
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_59144ece52bf4d0ab3b992492b86478c.bindTooltip(
+            `<div>`
+            + `Price: 100$ <br>Air Space Class: C<br>Engine Model: V2527-5A<br>Aircraft Model: A320-232` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_59144ece52bf4d0ab3b992492b86478c.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_aa284afaab3848e1a13323b9b4c065aa = L.polyline(
+                    [[-31.9539, 141.4539], [-33.63950666666667, 140.21751333333333], [-34.9285, 138.6007]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#fff200",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#fff200",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3.25
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_d27e03de60b54141916428f5957dc08b = L.polyline.antPath(
+                  [[-31.9539, 141.4539], [-33.63950666666667, 140.21751333333333], [-34.9285, 138.6007]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 1.25
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_d27e03de60b54141916428f5957dc08b.bindTooltip(
+            `<div>`
+            + `Price: 100$ <br>Air Space Class: C<br>Engine Model: V2527-5A<br>Aircraft Model: A320-232` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_d27e03de60b54141916428f5957dc08b.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_c53ac95fa314468c929ca482c3ade600 = L.polyline(
+                    [[-34.9285, 138.6007], [-33.24096666666667, 128.74661333333333], [-31.9505, 115.8605]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#11ff00",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#11ff00",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 4.75
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_9a8f2cc93df94856ab805a8865a74467 = L.polyline.antPath(
+                  [[-34.9285, 138.6007], [-33.24096666666667, 128.74661333333333], [-31.9505, 115.8605]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 2.75
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_9a8f2cc93df94856ab805a8865a74467.bindTooltip(
+            `<div>`
+            + `Price: 220$ <br>Air Space Class: D<br>Engine Model: CF6-80E142<br>Aircraft Model: A330-203` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_9a8f2cc93df94856ab805a8865a74467.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_a93ac8524b4c45e39ee221d91a083384 = L.polyline(
+                    [[-34.9285, 138.6007], [-22.198276666666665, 135.24015666666665], [-12.4634, 130.8456]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#11ff00",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#11ff00",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 4.875
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_542b3cf08fcd46378b48d01ecf4c9d1d = L.polyline.antPath(
+                  [[-34.9285, 138.6007], [-22.198276666666665, 135.24015666666665], [-12.4634, 130.8456]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 2.875
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_542b3cf08fcd46378b48d01ecf4c9d1d.bindTooltip(
+            `<div>`
+            + `Price: 230$ <br>Air Space Class: D<br>Engine Model: CF6-80E142<br>Aircraft Model: A330-203` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_542b3cf08fcd46378b48d01ecf4c9d1d.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_1bc94c2eb3744a969d080180d87e2b3c = L.polyline(
+                    [[-12.4634, 130.8456], [-25.193623333333335, 134.2061433333333], [-34.9285, 138.6007]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#11ff00",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#11ff00",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 4.875
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_3146f37ca8ec47be94b7fb55ac5f29b2 = L.polyline.antPath(
+                  [[-12.4634, 130.8456], [-25.193623333333335, 134.2061433333333], [-34.9285, 138.6007]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 2.875
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_3146f37ca8ec47be94b7fb55ac5f29b2.bindTooltip(
+            `<div>`
+            + `Price: 230$ <br>Air Space Class: D<br>Engine Model: CF6-80E142<br>Aircraft Model: A330-203` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_3146f37ca8ec47be94b7fb55ac5f29b2.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_e55e65510f664daeb1d0305e7e98adaf = L.polyline(
+                    [[-12.4634, 130.8456], [-18.829673333333332, 132.16081], [-23.698, 133.8807]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#339cb3",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#339cb3",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3.5
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_ce07e358beda48e1ab0338665a804bf4 = L.polyline.antPath(
+                  [[-12.4634, 130.8456], [-18.829673333333332, 132.16081], [-23.698, 133.8807]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 1.5
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_ce07e358beda48e1ab0338665a804bf4.bindTooltip(
+            `<div>`
+            + `Price: 120$ <br>Air Space Class: E<br>Engine Model: CFM-56-3<br>Aircraft Model: B737-476` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_ce07e358beda48e1ab0338665a804bf4.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_72ba1705488e4c8692359053505913ca = L.polyline(
+                    [[-23.698, 133.8807], [-17.33172666666667, 132.56548999999998], [-12.4634, 130.8456]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#339cb3",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#339cb3",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3.5
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_ac81d66aea324bf997604c67bb68c647 = L.polyline.antPath(
+                  [[-23.698, 133.8807], [-17.33172666666667, 132.56548999999998], [-12.4634, 130.8456]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 1.5
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_ac81d66aea324bf997604c67bb68c647.bindTooltip(
+            `<div>`
+            + `Price: 120$ <br>Air Space Class: E<br>Engine Model: CFM-56-3<br>Aircraft Model: B737-476` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_ac81d66aea324bf997604c67bb68c647.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_1b1c76f40b5e4c009ce9f80b5584fb58 = L.polyline(
+                    [[-31.9505, 115.8605], [-33.63803333333333, 125.71458666666666], [-34.9285, 138.6007]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#11ff00",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#11ff00",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 4.75
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_2eb007fcee244001877ad3f9c2c86fa1 = L.polyline.antPath(
+                  [[-31.9505, 115.8605], [-33.63803333333333, 125.71458666666666], [-34.9285, 138.6007]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 2.75
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_2eb007fcee244001877ad3f9c2c86fa1.bindTooltip(
+            `<div>`
+            + `Price: 220$ <br>Air Space Class: D<br>Engine Model: CF6-80E142<br>Aircraft Model: A330-203` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_2eb007fcee244001877ad3f9c2c86fa1.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_eaf1029f6859458d8d0d77b9ab59af1d = L.polyline(
+                    [[-31.9505, 115.8605], [-33.69379333333333, 116.73722000000001], [-35.0269, 117.8837]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#fff200",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#fff200",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3.25
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_d6daf6172dd14d40aada01ae3be86d55 = L.polyline.antPath(
+                  [[-31.9505, 115.8605], [-33.69379333333333, 116.73722000000001], [-35.0269, 117.8837]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 1.25
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_d6daf6172dd14d40aada01ae3be86d55.bindTooltip(
+            `<div>`
+            + `Price: 100$ <br>Air Space Class: C<br>Engine Model: V2527-5A<br>Aircraft Model: A320-232` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_d6daf6172dd14d40aada01ae3be86d55.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_7ec89a3315e7450fae54dcb827b32e98 = L.polyline(
+                    [[-31.9505, 115.8605], [-31.26965, 118.28955], [-30.749, 121.466]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#fff200",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#fff200",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3.0
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_70d6ae3bec184e5683bc7c447596c438 = L.polyline.antPath(
+                  [[-31.9505, 115.8605], [-31.26965, 118.28955], [-30.749, 121.466]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 1.0
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_70d6ae3bec184e5683bc7c447596c438.bindTooltip(
+            `<div>`
+            + `Price: 80$ <br>Air Space Class: C<br>Engine Model: V2527-5A<br>Aircraft Model: A320-232` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_70d6ae3bec184e5683bc7c447596c438.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_24fb2cac1408458195a41965697039b7 = L.polyline(
+                    [[-31.9505, 115.8605], [-24.025043333333336, 118.62079], [-17.9644, 122.2304]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#fff200",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#fff200",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3.125
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_d7d24a7b65194e41a68fbb89a8d2298b = L.polyline.antPath(
+                  [[-31.9505, 115.8605], [-24.025043333333336, 118.62079], [-17.9644, 122.2304]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 1.125
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_d7d24a7b65194e41a68fbb89a8d2298b.bindTooltip(
+            `<div>`
+            + `Price: 90$ <br>Air Space Class: C<br>Engine Model: V2527-5A<br>Aircraft Model: A320-232` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_d7d24a7b65194e41a68fbb89a8d2298b.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_e857d343e2054637a4fa650a656ac9b4 = L.polyline(
+                    [[-35.0269, 117.8837], [-33.28360666666667, 117.00698], [-31.9505, 115.8605]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff8c00",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff8c00",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3.25
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_39d4a3641c6641a78c06726b50aa846e = L.polyline.antPath(
+                  [[-35.0269, 117.8837], [-33.28360666666667, 117.00698], [-31.9505, 115.8605]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 1.25
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_39d4a3641c6641a78c06726b50aa846e.bindTooltip(
+            `<div>`
+            + `Price: 100$ <br>Air Space Class: B<br>Engine Model: V2527-5A<br>Aircraft Model: A320-232` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_39d4a3641c6641a78c06726b50aa846e.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_03220e11387f4ebaa94ccaef96f400fa = L.polyline(
+                    [[-30.749, 121.466], [-31.429850000000002, 119.03695], [-31.9505, 115.8605]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#fff200",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#fff200",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3.0
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_f300f4845a084001a18ff5e4d8b1dbe6 = L.polyline.antPath(
+                  [[-30.749, 121.466], [-31.429850000000002, 119.03695], [-31.9505, 115.8605]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 1.0
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_f300f4845a084001a18ff5e4d8b1dbe6.bindTooltip(
+            `<div>`
+            + `Price: 80$ <br>Air Space Class: C<br>Engine Model: V2527-5A<br>Aircraft Model: A320-232` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_f300f4845a084001a18ff5e4d8b1dbe6.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_7697fe96925b4602b86aebebe908d28f = L.polyline(
+                    [[-17.9644, 122.2304], [-25.889856666666667, 119.47011], [-31.9505, 115.8605]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff8c00",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff8c00",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3.125
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_5cfa8dee87b945d8a1209fa98201ea6f = L.polyline.antPath(
+                  [[-17.9644, 122.2304], [-25.889856666666667, 119.47011], [-31.9505, 115.8605]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 1.125
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_5cfa8dee87b945d8a1209fa98201ea6f.bindTooltip(
+            `<div>`
+            + `Price: 90$ <br>Air Space Class: B<br>Engine Model: CFM-56-3<br>Aircraft Model: B737-476` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_5cfa8dee87b945d8a1209fa98201ea6f.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_aad4ebad864d4cb6805792595286f967 = L.polyline(
+                    [[-41.4332, 147.1441], [-39.38209333333334, 146.199], [-37.8136, 144.9631]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff8c00",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff8c00",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3.25
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_af3f34cf5cee4230a865ceb64facdd50 = L.polyline.antPath(
+                  [[-41.4332, 147.1441], [-39.38209333333334, 146.199], [-37.8136, 144.9631]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 1.25
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_af3f34cf5cee4230a865ceb64facdd50.bindTooltip(
+            `<div>`
+            + `Price: 100$ <br>Air Space Class: B<br>Engine Model: CFM-56-3<br>Aircraft Model: B737-476` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_af3f34cf5cee4230a865ceb64facdd50.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_374ec7902bdb4119adf517219bbb213c = L.polyline(
+                    [[-41.4332, 147.1441], [-42.254243333333335, 147.22344333333336], [-42.8821, 147.3272]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff8c00",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff8c00",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3.0
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_9812d7af97034f0382b9000d52f3c6bd = L.polyline.antPath(
+                  [[-41.4332, 147.1441], [-42.254243333333335, 147.22344333333336], [-42.8821, 147.3272]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 1.0
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_9812d7af97034f0382b9000d52f3c6bd.bindTooltip(
+            `<div>`
+            + `Price: 80$ <br>Air Space Class: B<br>Engine Model: V2527-5A<br>Aircraft Model: A320-232` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_9812d7af97034f0382b9000d52f3c6bd.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_d6fbce6afc0e42bfbbcd4b004f57cdf3 = L.polyline(
+                    [[-42.8821, 147.3272], [-40.00995, 146.30275666666668], [-37.8136, 144.9631]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff0000",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff0000",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3.625
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_b112df8494614d3fbec6457955f2f60d = L.polyline.antPath(
+                  [[-42.8821, 147.3272], [-40.00995, 146.30275666666668], [-37.8136, 144.9631]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 1.625
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_b112df8494614d3fbec6457955f2f60d.bindTooltip(
+            `<div>`
+            + `Price: 130$ <br>Air Space Class: A<br>Engine Model: CFM56-3B1<br>Aircraft Model: B737-3B7` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_b112df8494614d3fbec6457955f2f60d.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_9b9b8c5079b14439aa15d0c50f7836d6 = L.polyline(
+                    [[-42.8821, 147.3272], [-42.06105666666667, 147.24785666666668], [-41.4332, 147.1441]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff0000",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff0000",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3.0
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_9f305e72954e4712ae4656c3bf22cef8 = L.polyline.antPath(
+                  [[-42.8821, 147.3272], [-42.06105666666667, 147.24785666666668], [-41.4332, 147.1441]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 1.0
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_9f305e72954e4712ae4656c3bf22cef8.bindTooltip(
+            `<div>`
+            + `Price: 80$ <br>Air Space Class: A<br>Engine Model: V2527-5A<br>Aircraft Model: A320-232` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_9f305e72954e4712ae4656c3bf22cef8.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_b4b57a6e36af4ef4872914f81509cda5 = L.polyline(
+                    [[-27.4698, 153.0251], [-31.0959, 152.23825333333335], [-33.8688, 151.2093]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff8c00",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff8c00",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 4.125
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_07bed2f03a1142d9a32131c47165f9b7 = L.polyline.antPath(
+                  [[-27.4698, 153.0251], [-31.0959, 152.23825333333335], [-33.8688, 151.2093]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 2.125
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_07bed2f03a1142d9a32131c47165f9b7.bindTooltip(
+            `<div>`
+            + `Price: 170$ <br>Air Space Class: B<br>Engine Model: CF6-80E142<br>Aircraft Model: A330-203` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_07bed2f03a1142d9a32131c47165f9b7.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_1af78ef2a4054302b4b32b094bd5ff81 = L.polyline(
+                    [[-27.4698, 153.0251], [-23.648086666666668, 147.16106000000002], [-20.7256, 139.4927]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff0000",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff0000",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 4.125
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_0b543ae046ec4e329680a4f5060cd22f = L.polyline.antPath(
+                  [[-27.4698, 153.0251], [-23.648086666666668, 147.16106000000002], [-20.7256, 139.4927]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 2.125
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_0b543ae046ec4e329680a4f5060cd22f.bindTooltip(
+            `<div>`
+            + `Price: 170$ <br>Air Space Class: A<br>Engine Model: CFM56-3B1<br>Aircraft Model: B737-3B7` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_0b543ae046ec4e329680a4f5060cd22f.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_7cee7fb02b224a918e94679b4bb1d77e = L.polyline(
+                    [[-27.4698, 153.0251], [-25.151736666666668, 151.93522333333334], [-23.3791, 150.51]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff0000",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff0000",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 4.25
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_68ecf800ce7f4efc860f989f8b9714b8 = L.polyline.antPath(
+                  [[-27.4698, 153.0251], [-25.151736666666668, 151.93522333333334], [-23.3791, 150.51]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 2.25
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_68ecf800ce7f4efc860f989f8b9714b8.bindTooltip(
+            `<div>`
+            + `Price: 180$ <br>Air Space Class: A<br>Engine Model: CFM56-3B1<br>Aircraft Model: B737-3B7` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_68ecf800ce7f4efc860f989f8b9714b8.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_0436ec17e4254bbbb10051a53d03dd8f = L.polyline(
+                    [[-27.4698, 153.0251], [-21.49078666666667, 149.88473333333334], [-16.9186, 145.7781]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff0000",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff0000",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 4.875
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_decb6a41f6514ecfb919ca9d766bc277 = L.polyline.antPath(
+                  [[-27.4698, 153.0251], [-21.49078666666667, 149.88473333333334], [-16.9186, 145.7781]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 2.875
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_decb6a41f6514ecfb919ca9d766bc277.bindTooltip(
+            `<div>`
+            + `Price: 230$ <br>Air Space Class: A<br>Engine Model: CF6-80E142<br>Aircraft Model: A330-203` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_decb6a41f6514ecfb919ca9d766bc277.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_e95f77bf5cf1491596016ff01784c072 = L.polyline(
+                    [[-27.4698, 153.0251], [-18.966173333333334, 143.41398333333333], [-12.4634, 130.8456]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff8c00",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff8c00",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 5.0
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_1b35850ffe6a478c9e0678f0f966d675 = L.polyline.antPath(
+                  [[-27.4698, 153.0251], [-18.966173333333334, 143.41398333333333], [-12.4634, 130.8456]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3.0
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_1b35850ffe6a478c9e0678f0f966d675.bindTooltip(
+            `<div>`
+            + `Price: 240$ <br>Air Space Class: B<br>Engine Model: CF6-80E142<br>Aircraft Model: A330-203` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_1b35850ffe6a478c9e0678f0f966d675.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_274731a9f60f485299a8ea69b2a446a0 = L.polyline(
+                    [[-20.7256, 139.4927], [-24.54731333333333, 145.35674], [-27.4698, 153.0251]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff0000",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff0000",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 4.125
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_c4cdea77f4724f4e870422274e8ac1ea = L.polyline.antPath(
+                  [[-20.7256, 139.4927], [-24.54731333333333, 145.35674], [-27.4698, 153.0251]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 2.125
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_c4cdea77f4724f4e870422274e8ac1ea.bindTooltip(
+            `<div>`
+            + `Price: 170$ <br>Air Space Class: A<br>Engine Model: CF6-80E142<br>Aircraft Model: A330-202` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_c4cdea77f4724f4e870422274e8ac1ea.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_1f3e634a541247bbbae1179179a442a5 = L.polyline(
+                    [[-23.3791, 150.51], [-25.697163333333332, 151.59987666666666], [-27.4698, 153.0251]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff8c00",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff8c00",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 4.25
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_a41789c17c874288991b8621272a17fb = L.polyline.antPath(
+                  [[-23.3791, 150.51], [-25.697163333333332, 151.59987666666666], [-27.4698, 153.0251]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 2.25
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_a41789c17c874288991b8621272a17fb.bindTooltip(
+            `<div>`
+            + `Price: 180$ <br>Air Space Class: B<br>Engine Model: CF6-80E142<br>Aircraft Model: A330-202` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_a41789c17c874288991b8621272a17fb.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_29fbdd5256074dad85dea85076ba7f3e = L.polyline(
+                    [[-16.9186, 145.7781], [-22.897613333333336, 148.91846666666666], [-27.4698, 153.0251]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff0000",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff0000",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 4.875
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_9eda1a2be86f461da7be51c657168027 = L.polyline.antPath(
+                  [[-16.9186, 145.7781], [-22.897613333333336, 148.91846666666666], [-27.4698, 153.0251]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 2.875
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_9eda1a2be86f461da7be51c657168027.bindTooltip(
+            `<div>`
+            + `Price: 230$ <br>Air Space Class: A<br>Engine Model: CF6-80E142<br>Aircraft Model: A330-203` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_9eda1a2be86f461da7be51c657168027.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_07c93e89896d4264bdfa2cff317f2ec5 = L.polyline(
+                    [[-12.4634, 130.8456], [-20.967026666666666, 140.45671666666667], [-27.4698, 153.0251]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff0000",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff0000",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 5.0
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_cdf00ec70efb4500b95cbcf4ed0df3a0 = L.polyline.antPath(
+                  [[-12.4634, 130.8456], [-20.967026666666666, 140.45671666666667], [-27.4698, 153.0251]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3.0
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_cdf00ec70efb4500b95cbcf4ed0df3a0.bindTooltip(
+            `<div>`
+            + `Price: 240$ <br>Air Space Class: A<br>Engine Model: CF6-80E142<br>Aircraft Model: A330-203` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_cdf00ec70efb4500b95cbcf4ed0df3a0.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_baaea41754824455ae05af8bb8956774 = L.polyline(
+                    [[-20.7256, 139.4927], [-16.043686666666666, 135.74562333333333], [-12.4634, 130.8456]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff8c00",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff8c00",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3.5
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_cbad3d6cadfb476d838910b904e56f4f = L.polyline.antPath(
+                  [[-20.7256, 139.4927], [-16.043686666666666, 135.74562333333333], [-12.4634, 130.8456]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 1.5
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_cbad3d6cadfb476d838910b904e56f4f.bindTooltip(
+            `<div>`
+            + `Price: 120$ <br>Air Space Class: B<br>Engine Model: CFM56-3B1<br>Aircraft Model: B737-3B7` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_cbad3d6cadfb476d838910b904e56f4f.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_e0bcd38ad05e47cfa6af9593a1607826 = L.polyline(
+                    [[-12.4634, 130.8456], [-17.145313333333334, 134.59267666666668], [-20.7256, 139.4927]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff8c00",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff8c00",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 3.5
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_ffb874b22e404aa592434ba12f450801 = L.polyline.antPath(
+                  [[-12.4634, 130.8456], [-17.145313333333334, 134.59267666666668], [-20.7256, 139.4927]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 1.5
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_ffb874b22e404aa592434ba12f450801.bindTooltip(
+            `<div>`
+            + `Price: 120$ <br>Air Space Class: B<br>Engine Model: CFM56-3B1<br>Aircraft Model: B737-3B7` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_ffb874b22e404aa592434ba12f450801.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_ea9f74d0e11847068018c745ccd04ed1 = L.polyline(
+                    [[-34.9285, 138.6007], [-33.54963, 138.24913666666666], [-32.4952, 137.7894]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#ff8c00",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#ff8c00",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 2.625
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_3baa8f5afecf4d3f931bf8ac84c35b92 = L.polyline.antPath(
+                  [[-34.9285, 138.6007], [-33.54963, 138.24913666666666], [-32.4952, 137.7894]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 0.625
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_3baa8f5afecf4d3f931bf8ac84c35b92.bindTooltip(
+            `<div>`
+            + `Price: 50$ <br>Air Space Class: B<br>Engine Model: Unknown<br>Aircraft Model: B717-200` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_3baa8f5afecf4d3f931bf8ac84c35b92.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+                var poly_line_bdded57120014bbd92cdf8aa0bbee600 = L.polyline(
+                    [[-32.4952, 137.7894], [-33.874069999999996, 138.1409633333333], [-34.9285, 138.6007]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "#fff200",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#fff200",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.8,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 2.625
+}
+                    )
+                    .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+                ant_path_581c94c774cf4056b3beb4b9153abc6c = L.polyline.antPath(
+                  [[-32.4952, 137.7894], [-33.874069999999996, 138.1409633333333], [-34.9285, 138.6007]],
+                  {
+  "bubblingMouseEvents": true,
+  "color": "#0000FF",
+  "dashArray": [
+    20,
+    30
+  ],
+  "dashOffset": null,
+  "delay": 400,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "hardwareAcceleration": false,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 0.5,
+  "paused": false,
+  "pulseColor": "#FFFFFF",
+  "reverse": false,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 0.625
+}
+                )
+                .addTo(map_a2560e2900d24e5483474da2d8b55ad6);
+            
+    
+        ant_path_581c94c774cf4056b3beb4b9153abc6c.bindTooltip(
+            `<div>`
+            + `Price: 50$ <br>Air Space Class: C<br>Engine Model: Unknown<br>Aircraft Model: B717-200` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+                ant_path_581c94c774cf4056b3beb4b9153abc6c.setText("✈", {
+                    repeat: false,
+                    center: true,
+                    below: false,
+                    offset: 0,
+                    orientation: 0,
+                    attributes: {'font-weight': 'bold', 'font-size': '30'}
+                });
+            
+    
+                
+
+                map_a2560e2900d24e5483474da2d8b55ad6.fitBounds(
+                    [[-42.8821, 115.8605], [-12.4634, 153.0251]],
+                    {}
+                    );
+            
+    
+
+        var tile_layer_089b49d1d84041c2b82770ddbad73ab0 = L.tileLayer(
+        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        {
+        "attribution": null,
+        "detectRetina": false,
+        "maxNativeZoom": 18,
+        "maxZoom": 18,
+        "minZoom": 0,
+        "noWrap": false,
+        "opacity": 1,
+        "subdomains": "abc",
+        "tms": false
+} );
+
+        var mini_map_11028d73824d4d53841f924295ce29be = new L.Control.MiniMap( tile_layer_089b49d1d84041c2b82770ddbad73ab0,
+         {
+  "autoToggleDisplay": false,
+  "centerFixed": false,
+  "collapsedHeight": 25,
+  "collapsedWidth": 25,
+  "height": 150,
+  "minimized": false,
+  "position": "bottomright",
+  "toggleDisplay": false,
+  "width": 150,
+  "zoomAnimation": false,
+  "zoomLevelFixed": null,
+  "zoomLevelOffset": -5
+});
+        map_a2560e2900d24e5483474da2d8b55ad6.addControl(mini_map_11028d73824d4d53841f924295ce29be);
+
+        
+</script>
